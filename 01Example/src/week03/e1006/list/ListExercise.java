@@ -7,7 +7,8 @@ public class ListExercise {
 
     //외부에서 접근하지 못하게 private
     private final List<String> students;
-    //private List<String> students = new ArrayList<>(); //초기화 방법(1)
+    //private final List<String> students = new ArrayList<>(); //초기화 방법(1)
+    //변수를 선언과 동시에 초기화하는 것 => 명시적 초기화라고 한다.
 
     public ListExercise() {
         this.students = new ArrayList<>(); //초기화 방법(2)
