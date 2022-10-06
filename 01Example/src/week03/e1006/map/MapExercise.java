@@ -98,5 +98,6 @@ public class MapExercise {
 
         System.out.println(map.get("전담"));
         System.out.println(map.get("노지후"));
+        System.out.println(map.get("황하준"));
     }
 }
