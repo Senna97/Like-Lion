@@ -34,3 +34,8 @@ public class ReadFile {
         ReadNLetter("a_file.txt", 4);
     }
 }
+    /*
+    h
+    he
+    hell
+     */

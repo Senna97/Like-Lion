@@ -12,3 +12,15 @@ public class FileList {
         }
     }
 }
+    /*
+    ./02Assignment
+    ./out
+    ./01Example
+    ./README.md
+    ./.gitignore
+    ./.git
+    ./a_file.txt
+    ./Like-Lion.iml
+    ./.idea
+    ./src
+     */
