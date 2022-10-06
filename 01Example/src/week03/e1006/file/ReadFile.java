@@ -16,6 +16,7 @@ public class ReadFile {
             char ch = (char) fr.read();
             System.out.print(ch);
         }
+        System.out.println();
     }
 
     static void ReadNLetter(String fileName, int num) throws IOException { //맨 앞 n 글자를 읽어오는 method
@@ -24,12 +25,12 @@ public class ReadFile {
             char ch = (char) fr.read();
             System.out.print(ch);
         }
+        System.out.println();
     }
 
     public static void main(String[] args) throws IOException {
         ReadOneLetter("a_file.txt");
         ReadTwoLetter("a_file.txt");
-        System.out.println();
-        ReadNLetter("a_file.txt", 5);
+        ReadNLetter("a_file.txt", 4);
     }
 }
