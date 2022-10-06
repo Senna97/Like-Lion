@@ -97,5 +97,6 @@ public class MapExercise {
         map.put("황하준", "https://github.com/lay423/java-project");
 
         System.out.println(map.get("전담"));
+        System.out.println(map.get("노지후"));
     }
 }
