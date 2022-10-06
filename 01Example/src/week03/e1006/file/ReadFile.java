@@ -4,16 +4,32 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class ReadFile {
-    static void ReadOneByte(String fileName) throws IOException {
+    static void ReadOneLetter(String fileName) throws IOException { //맨 앞 한 글자를 읽어오는 method
         FileReader fr = new FileReader(fileName);
-        int ch;
+        char ch = (char) fr.read();
+        System.out.println(ch);
+    }
 
-        while ((ch = fr.read()) != -1) {
-            System.out.println((char) ch);
+    static void ReadTwoLetter(String fileName) throws IOException { //맨 앞 두 글자를 읽어오는 method
+        FileReader fr = new FileReader(fileName);
+        for (int i = 0; i < 2; i++) {
+            char ch = (char) fr.read();
+            System.out.print(ch);
+        }
+    }
+
+    static void ReadNLetter(String fileName, int num) throws IOException { //맨 앞 n 글자를 읽어오는 method
+        FileReader fr = new FileReader(fileName);
+        for (int i = 0; i < num; i++) {
+            char ch = (char) fr.read();
+            System.out.print(ch);
         }
     }
 
     public static void main(String[] args) throws IOException {
-        ReadOneByte("a_file.txt");
+        ReadOneLetter("a_file.txt");
+        ReadTwoLetter("a_file.txt");
+        System.out.println();
+        ReadNLetter("a_file.txt", 5);
     }
 }
