@@ -2,8 +2,8 @@ package week03.e1006.map;
 
 public class AlphabetCount {
 
-    public static boolean isAlphabet(char c) {
-        if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122)) {
+    public static boolean isAlphabet(char ch) {
+        if ((ch >= 65 && ch <= 90) || (ch >= 97 && ch <= 122)) {
             return true;
         }
         return false;
@@ -11,11 +11,11 @@ public class AlphabetCount {
 
     public static void main(String[] args) {
         String str = "abcdefg";
-        char c;
+        char ch;
 
         for (int i = 0; i < str.length(); i++) {
-            c = str.charAt(i);
-            System.out.println(isAlphabet(c));
+            ch = str.charAt(i);
+            System.out.println(isAlphabet(ch));
         }
     }
 }
