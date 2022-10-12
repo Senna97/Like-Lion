@@ -40,6 +40,7 @@ public class MaxAndMin {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        System.out.print("최대값과 최소값을 구하고 싶은 크기 9의 배열을 입력하세요. >> ");
         int arr[] = new int[9];
 
         for (int i = 0; i < arr.length; i++) {
@@ -50,9 +51,9 @@ public class MaxAndMin {
         MaxAndMin maxAndMin = new MaxAndMin();
 
         int minValue = maxAndMin.min(arr);
-        System.out.println(minValue);
+        System.out.println("최소값: " + minValue);
 
         int maxValue = maxAndMin.max(arr);
-        System.out.println(maxValue);
+        System.out.println("최대값: " + maxValue);
     }
 }
