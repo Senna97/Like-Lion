@@ -4,10 +4,10 @@ public class CalculatorMain {
     public static void main(String[] args) {
         Calculator calculator = new Calculator(4, 2);
 
-        calculator.Plus();
-        calculator.Minus();
-        calculator.Multiple();
-        calculator.Divide();
+        calculator.plus();
+        calculator.minus();
+        calculator.multiple();
+        calculator.divide();
 
     }
 }

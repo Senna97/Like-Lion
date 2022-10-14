@@ -1,6 +1,7 @@
 package week03.e1006.map;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class AlphabetCount {
 
@@ -12,9 +13,9 @@ public class AlphabetCount {
     }
 
     public static void main(String[] args) {
-        String str = "abcdefg".toUpperCase(); //소문자 -> 대문자
+        String str = "aabcdefg".toUpperCase(); //소문자 -> 대문자
 
-        HashMap<Character, Integer> alphabetMap = new HashMap<>();
+        Map<Character, Integer> alphabetMap = new HashMap<>();
 
         for (char ch = 'A'; ch <= 'Z'; ch++) {
             alphabetMap.put(ch, 0);

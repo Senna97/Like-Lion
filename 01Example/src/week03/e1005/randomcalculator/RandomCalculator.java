@@ -1,26 +1,21 @@
 package week03.e1005.randomcalculator;
 
 public class RandomCalculator {
-    int randomNumber;
-
-    public RandomCalculator(int randomNumber) {
-        this.randomNumber = randomNumber;
+    NumberCreator randomNumberCreator = new RandomNumberCreator();
+    int randomNumber = randomNumberCreator.getRandomNumber();
+    void plus(int a) {
+        System.out.println(a + randomNumber);
     }
 
-    void Plus(int a) {
-        System.out.println(a + this.randomNumber);
+    void minus(int a) {
+        System.out.println(a - randomNumber);
     }
 
-    void Minus(int a) {
-        System.out.println(a - this.randomNumber);
+    void multiple(int a) {
+        System.out.println(a * randomNumber);
     }
 
-    void Multiple(int a) {
-        System.out.println(a * this.randomNumber);
-    }
-
-    void Divide(int a) {
-        System.out.println(a / this.randomNumber);
+    void divide(int a) {
+        System.out.println(a / randomNumber);
     }
 }
-

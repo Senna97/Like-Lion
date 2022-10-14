@@ -8,19 +8,19 @@ public class Calculator {
         this.b = b;
     }
 
-    void Plus() {
+    void plus() {
         System.out.println(this.a + this.b);
     }
 
-    void Minus() {
+    void minus() {
         System.out.println(this.a - this.b);
     }
 
-    void Multiple() {
+    void multiple() {
         System.out.println(this.a * this.b);
     }
 
-    void Divide() {
+    void divide() {
         System.out.println(this.a / this.b);
     }
 }

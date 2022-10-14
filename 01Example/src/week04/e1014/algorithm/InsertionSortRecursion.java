@@ -3,22 +3,30 @@ package week04.e1014.algorithm;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class InsertionSort {
+public class InsertionSortRecursion {
 
-    public int[] sort(int[] arr) {
+    public int[] sort(int[] arr, int i) {
+
+        if (i == arr.length) {
+            return arr;
+        }
+
+        swap(arr, i);
+        return sort(arr, i + 1);
+    }
+
+    public void swap(int[] arr, int i) {
         int temp;
 
-        for (int i = 1; i < arr.length; i++) {
-            for (int j = i; j > 0; j--) {
-                if (arr[j - 1] > arr[j]) {
-                    temp = arr[j - 1];
-                    arr[j - 1] = arr[j];
-                    arr[j] = temp;
-                }
+        for (int j = i; j > 0; j--) {
+            if (arr[j - 1] > arr[j]) {
+                temp = arr[j - 1];
+                arr[j - 1] = arr[j];
+                arr[j] = temp;
             }
         }
-        return arr;
     }
+
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -32,8 +40,8 @@ public class InsertionSort {
             arr[i] = element;
         }
 
-        InsertionSort insertionSort = new InsertionSort();
-        int[] result = insertionSort.sort(arr);
+        InsertionSortRecursion insertionSortRecursion = new InsertionSortRecursion();
+        int[] result = insertionSortRecursion.sort(arr, 1);
         System.out.print("삽입 정렬된 배열: ");
         System.out.println(Arrays.toString(result));
     }

@@ -1,10 +1,11 @@
 package week03.e1006.map;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class MapExercise {
     public static void main(String[] args) {
-        HashMap<String, String> map = new HashMap<>();
+        Map<String, String> map = new HashMap<>();
         map.put("권하준", "https://github.com/dongyeon-0822/java-project-exercise");
         map.put("조성윤", "https://github.com/kang-subin/Java");
         map.put("안예은", "https://github.com/KoKwanwun/LikeLion.git");

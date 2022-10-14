@@ -4,13 +4,13 @@ import java.util.Scanner;
 
 public class MaxAndMin {
 
-    private int getMaxOrMin(int[] arr, Compare compare) {
+    private int getMaxOrMin(int[] arr, Compare compare) { // interface 자체를 넘겨준다 -> callback
         int targetValue = arr[0];
 
         for (int i = 0; i < arr.length; i++) {
-            boolean isSth = compare.doSth(arr[i], targetValue);
+            boolean flag = compare.compareMethod(arr[i], targetValue);
 
-            if (isSth) {
+            if (flag) {
                 targetValue = arr[i];
             }
         }
@@ -20,9 +20,9 @@ public class MaxAndMin {
 
     public int max(int[] arr) {
 
-        return getMaxOrMin(arr, new Compare() {
+        return getMaxOrMin(arr, new Compare() { // inner class
             @Override
-            public boolean doSth(int valueA, int valueB) {
+            public boolean compareMethod(int valueA, int valueB) {
                 return valueA > valueB;
             }
         });
@@ -32,7 +32,7 @@ public class MaxAndMin {
 
         return getMaxOrMin(arr, new Compare() {
             @Override
-            public boolean doSth(int valueA, int valueB) {
+            public boolean compareMethod(int valueA, int valueB) {
                 return valueA < valueB;
             }
         });

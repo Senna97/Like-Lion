@@ -1,9 +1,8 @@
 package week04.e1014.algorithm;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class InsertionSort {
+public class CodeUp1443 {
 
     public int[] sort(int[] arr) {
         int temp;
@@ -22,19 +21,21 @@ public class InsertionSort {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("삽입 정렬을 원하는 배열의 크기를 입력해주세요. >> ");
         int num = sc.nextInt();
-        System.out.print("삽입 정렬할 배열을 입력해주세요. >> ");
-        int[] arr = new int[num];
 
-        for (int i = 0; i < arr.length; i++) {
+        int[] numbers = new int[num];
+
+        for (int i = 0; i < numbers.length; i++) {
             int element = sc.nextInt();
-            arr[i] = element;
+            numbers[i] = element;
         }
 
-        InsertionSort insertionSort = new InsertionSort();
-        int[] result = insertionSort.sort(arr);
-        System.out.print("삽입 정렬된 배열: ");
-        System.out.println(Arrays.toString(result));
+        CodeUp1443 codeUp1443 = new CodeUp1443();
+        int[] sortedNumbers = codeUp1443.sort(numbers);
+
+        for (int number : sortedNumbers) {
+            System.out.println(number);
+        }
     }
 }
+

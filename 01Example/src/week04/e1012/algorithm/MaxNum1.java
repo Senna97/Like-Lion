@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class MaxNum1 {
 
-    void MaxNum(int[] arr) {
+    void getMax(int[] arr) {
         int max = arr[0];
         int maxIndex = 0;
 
@@ -29,6 +29,6 @@ public class MaxNum1 {
         }
 
         MaxNum1 maxNum1 = new MaxNum1();
-        maxNum1.MaxNum(arr);
+        maxNum1.getMax(arr);
     }
 }
