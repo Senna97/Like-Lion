@@ -24,10 +24,10 @@ public class RightTriangle {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("몇 줄의 피라미드를 찍고 싶으신가요? >> ");
+        System.out.print("몇 줄의 삼각형을 찍고 싶으신가요? >> ");
         int num = sc.nextInt();
 
-        RightTriangle rightTriangle = new RightTriangle("%");
+        RightTriangle rightTriangle = new RightTriangle("@");
         rightTriangle.getRightTriangle(num);
     }
 }
