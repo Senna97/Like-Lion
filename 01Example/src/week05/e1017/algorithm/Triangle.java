@@ -2,14 +2,14 @@ package week05.e1017.algorithm;
 
 import java.util.Scanner;
 
-public class RightTriangle {
+public class Triangle {
 
     private String letter = "*";
 
-    public RightTriangle() {
+    public Triangle() {
     }
 
-    public RightTriangle(String letter) {
+    public Triangle(String letter) {
         this.letter = letter;
     }
 
@@ -27,7 +27,7 @@ public class RightTriangle {
         System.out.print("몇 줄의 삼각형을 찍고 싶으신가요? >> ");
         int num = sc.nextInt();
 
-        RightTriangle rightTriangle = new RightTriangle("@");
-        rightTriangle.getRightTriangle(num);
+        Triangle triangle = new Triangle("@");
+        triangle.getRightTriangle(num);
     }
 }
