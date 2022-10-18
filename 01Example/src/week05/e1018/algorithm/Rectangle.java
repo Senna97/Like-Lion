@@ -1,4 +1,4 @@
-package week05.a1018.algorithm;
+package week05.e1018.algorithm;
 
 import java.util.Scanner;
 
