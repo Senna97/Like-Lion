@@ -1,4 +1,5 @@
 # [TDD](https://github.com/Senna97/Gradle-Project/tree/main/src)
+TDD를 위해 다른 리포지토리에 올려 뒀습니다!
 
 # 01Example: 멋쟁이사자처럼 백엔드스쿨 2기 수업 예제 코드
 ### `package week03.e1006.set;`
