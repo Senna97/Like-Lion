@@ -6,8 +6,9 @@ import java.util.Scanner;
 
 public class SieveOfEratosthenes {
 
-    void findPrime(int n) {
+    public int solution(int n) {
         List<Integer> list = new ArrayList<>(n - 1);
+
         for (int i = 0; i < n - 1; i++) {
             list.add(i + 2);
         }
@@ -20,15 +21,16 @@ public class SieveOfEratosthenes {
             }
         }
 
-        System.out.println(list);
-        System.out.println(list.size());
+        return list.size();
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("1부터 입력받은 숫자 n 사이에 있는 소수의 개수를 반환합니다. 숫자 n 입력 >> ");
         int n = sc.nextInt();
+
         SieveOfEratosthenes sieveOfEratosthenes = new SieveOfEratosthenes();
-        sieveOfEratosthenes.findPrime(n);
+        int result = sieveOfEratosthenes.solution(n);
+        System.out.println(result);
     }
 }
