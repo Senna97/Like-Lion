@@ -12,7 +12,13 @@ public class SieveOfEratosthenes {
             list.add(i + 2);
         }
 
-        list.removeIf(integer -> integer % 2 == 0 && integer != 2);
+        for (int i = 2; i <= Math.sqrt(capacity); i++) {
+            for (int j = 0; j < list.size(); j++) {
+                if (list.get(j) % i == 0 && list.get(j) != i) {
+                    list.remove(j);
+                }
+            }
+        }
 
         System.out.println(list);
         System.out.println(list.size());
