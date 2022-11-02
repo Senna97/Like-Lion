@@ -30,7 +30,7 @@ public class SieveOfEratosthenes {
         int n = sc.nextInt();
 
         SieveOfEratosthenes sieveOfEratosthenes = new SieveOfEratosthenes();
-        int result = sieveOfEratosthenes.solution(n);
-        System.out.println(result);
+        int count = sieveOfEratosthenes.solution(n);
+        System.out.println(count);
     }
 }
