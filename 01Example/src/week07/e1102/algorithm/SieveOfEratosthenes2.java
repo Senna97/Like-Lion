@@ -7,8 +7,8 @@ public class SieveOfEratosthenes2 {
     public int solution(int n) {
         int[] nums = new int[n - 1];
         boolean[] checks = new boolean[n - 1];
-        int num = 2;
 
+        int num = 2;
         for (int i = 0; i < nums.length; i++) {
             nums[i] = num;
             num++;
@@ -33,7 +33,7 @@ public class SieveOfEratosthenes2 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("1부터 입력받은 숫자 n 사이에 있는 소수의 개수를 반환합니다. 숫자 n 입력 >> ");
+//        System.out.print("1부터 입력받은 숫자 n 사이에 있는 소수의 개수를 반환합니다. 숫자 n 입력 >> ");
         int n = sc.nextInt();
 
         SieveOfEratosthenes2 sieveOfEratosthenes2 = new SieveOfEratosthenes2();
