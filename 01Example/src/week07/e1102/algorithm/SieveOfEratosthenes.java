@@ -15,6 +15,7 @@ public class SieveOfEratosthenes {
         list.removeIf(integer -> integer % 2 == 0 && integer != 2);
 
         System.out.println(list);
+        System.out.println(list.size());
     }
 
     public static void main(String[] args) {
