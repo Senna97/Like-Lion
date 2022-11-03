@@ -13,12 +13,15 @@ public class SieveOfEratosthenes2 {
             checks[i] = true;
         }
 
-        for (int i = 2; i < n; i += 2) { // 시작이 4부터
+        int multipleOf = 2;
+        for (int i = 2; i < nums.length; i += multipleOf) {
             checks[i] = false;
         }
 
-        for (int i = 4; i < n; i += 3) { // 시작이 6부터
-            checks[i] = false;
+        for (int i = 0; i < nums.length; i++) {
+            if (checks[i]) {
+                System.out.printf("%d ", nums[i]);
+            }
         }
 
         int count = 0;
@@ -38,6 +41,6 @@ public class SieveOfEratosthenes2 {
 
         SieveOfEratosthenes2 sieveOfEratosthenes2 = new SieveOfEratosthenes2();
         int count = sieveOfEratosthenes2.solution(n);
-        System.out.println(count);
+        System.out.println("\n" + count);
     }
 }
