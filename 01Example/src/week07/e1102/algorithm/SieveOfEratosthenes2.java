@@ -13,14 +13,10 @@ public class SieveOfEratosthenes2 {
             checks[i] = true;
         }
 
-        int multipleOf = 2;
-        for (int i = 2; i < nums.length; i += multipleOf) {
-            checks[i] = false;
-        }
-
         for (int i = 0; i < nums.length; i++) {
-            if (checks[i]) {
-                System.out.printf("%d ", nums[i]);
+            int multipleOf = nums[i];
+            for (int j = multipleOf + i; j < nums.length; j += multipleOf) {
+                checks[j] = false;
             }
         }
 
@@ -41,6 +37,6 @@ public class SieveOfEratosthenes2 {
 
         SieveOfEratosthenes2 sieveOfEratosthenes2 = new SieveOfEratosthenes2();
         int count = sieveOfEratosthenes2.solution(n);
-        System.out.println("\n" + count);
+        System.out.println(count);
     }
 }
