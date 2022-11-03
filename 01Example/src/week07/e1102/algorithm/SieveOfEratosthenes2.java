@@ -13,9 +13,9 @@ public class SieveOfEratosthenes2 {
             checks[i] = true;
         }
 
-        for (int i = 0; i < nums.length; i++) {
-            int multipleOf = nums[i];
-            for (int j = multipleOf + i; j < nums.length; j += multipleOf) {
+        for (int i = 0; i <= Math.sqrt(n); i++) {
+            int multipleOf = nums[i]; // 초기값: 2
+            for (int j = multipleOf + i; j < nums.length; j += multipleOf) { // 2 + 0 -> 3 + 1 -> 4 + 2 -> 5 + 3 -> ...
                 checks[j] = false;
             }
         }
