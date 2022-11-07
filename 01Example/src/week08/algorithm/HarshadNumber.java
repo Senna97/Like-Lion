@@ -3,6 +3,7 @@ package week08.algorithm;
 import java.util.Scanner;
 
 public class HarshadNumber {
+
     public boolean solution(int x) {
         boolean answer;
 
@@ -13,11 +14,8 @@ public class HarshadNumber {
             temp = temp / 10;
         }
 
-        if (x % sum == 0) { // 나누어 떨어지는지 check 하기 – step2
-            answer = true;
-        } else {
-            answer = false;
-        }
+        // 나누어 떨어지는지 check 하기 – step2
+        answer = x % sum == 0;
 
         return answer;
     }
