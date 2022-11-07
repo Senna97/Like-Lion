@@ -7,7 +7,7 @@ public class HarshadNumber {
         boolean answer;
 
         int sum = 0;
-        int temp = x;
+        int temp = x; // 기존의 x를 남겨두기 위함
         while (temp > 0) { // 자릿수의 합 구하기 – step1
             sum += temp % 10;
             temp = temp / 10;
