@@ -4,12 +4,16 @@ import java.util.Scanner;
 
 public class HarshadNumber {
     public boolean solution(int x) {
-        boolean answer = true;
+        boolean answer;
 
-        int sum = x % 10 + x % 100 / 10 + x / 100; // 자릿수의 합 구하기 – step1
-        System.out.println(sum);
+        int sum = 0;
+        int temp = x;
+        while (temp > 0) { // 자릿수의 합 구하기 – step1
+            sum += temp % 10;
+            temp = temp / 10;
+        }
 
-        if (x % sum == 0) { // 나누어 떨어지는지 check하기 – step2
+        if (x % sum == 0) { // 나누어 떨어지는지 check 하기 – step2
             answer = true;
         } else {
             answer = false;
