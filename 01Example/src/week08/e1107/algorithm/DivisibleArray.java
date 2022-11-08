@@ -1,4 +1,4 @@
-package week08.algorithm;
+package week08.e1107.algorithm;
 
 import java.util.ArrayList;
 import java.util.Collections;
