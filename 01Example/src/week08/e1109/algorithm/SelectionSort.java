@@ -16,6 +16,7 @@ public class SelectionSort {
             arr[i] = arr[swapIdx];
             arr[swapIdx] = temp;
         }
+
         System.out.println(Arrays.toString(arr));
     }
 
