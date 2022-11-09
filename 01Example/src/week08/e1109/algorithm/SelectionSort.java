@@ -1,15 +1,15 @@
 package week08.e1109.algorithm;
 
 import java.util.Arrays;
-import java.util.function.BiFunction;
+import java.util.function.BiPredicate;
 
 public class SelectionSort {
 
-    public void selectionSort(int[] arr, BiFunction<Integer, Integer, Boolean> bFn) {
+    public void selectionSort(int[] arr, BiPredicate<Integer, Integer> bPd) {
         for (int i = 0; i < arr.length - 1; i++) {
             int swapIdx = i;
             for (int j = i; j < arr.length; j++) {
-                if (bFn.apply(arr[j], arr[swapIdx])) {
+                if (bPd.test(arr[j], arr[swapIdx])) {
                     swapIdx = j;
                 }
             }
