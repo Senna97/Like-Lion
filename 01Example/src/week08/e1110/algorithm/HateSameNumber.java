@@ -1,20 +1,21 @@
 package week08.e1110.algorithm;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class HateSameNumber {
 
     public List<Integer> solution(int[] arr) {
 
+        int preNumIdx = 0;
         List<Integer> list = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
             if (!list.contains(arr[i])) {
                 list.add(arr[i]);
-            } else {
-                list.add(0);
+            } else if (arr[i] != arr[preNumIdx]) {
+                list.add(arr[i]);
             }
+            preNumIdx++;
         }
         return list;
     }
