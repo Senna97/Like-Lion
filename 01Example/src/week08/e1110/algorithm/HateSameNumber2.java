@@ -10,7 +10,7 @@ public class HateSameNumber2 {
         Stack<Integer> stack = new Stack<>();
         for (int element : arr) {
             if (stack.isEmpty() || stack.peek() != element) {
-                stack.add(element);
+                stack.push(element);
             }
         }
 
