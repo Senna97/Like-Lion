@@ -7,7 +7,8 @@ public class HateSameNumber {
 
     public List<Integer> solution(int[] arr) {
 
-        int preNumIdx = 0;
+        int preNumIdx = -1;
+
         List<Integer> list = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
             if (!list.contains(arr[i])) {
