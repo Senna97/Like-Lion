@@ -1,21 +1,30 @@
 package week08.e1110.algorithm;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class HateSameNumber {
 
-    public int[] solution(int[] arr) {
-        int[] answer = {};
+    public List<Integer> solution(int[] arr) {
 
-        return answer;
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < arr.length; i++) {
+            if (!list.contains(arr[i])) {
+                list.add(arr[i]);
+            } else {
+                list.add(0);
+            }
+        }
+        return list;
     }
 
     public static void main(String[] args) {
         HateSameNumber hateSameNumber = new HateSameNumber();
         int[] arr1 = {1, 1, 3, 3, 0, 1, 1};
-        int[] arr2 = {4,4,4,3,3};
+        int[] arr2 = {4, 4, 4, 3, 3};
 
-        System.out.println(Arrays.toString(hateSameNumber.solution(arr1))); // [1,3,0,1]
-        System.out.println(Arrays.toString(hateSameNumber.solution(arr2))); // [4, 3]
+        System.out.println(hateSameNumber.solution(arr1)); // [1,3,0,1]
+        System.out.println(hateSameNumber.solution(arr2)); // [4, 3]
     }
 }
