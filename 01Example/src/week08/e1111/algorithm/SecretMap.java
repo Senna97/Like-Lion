@@ -5,18 +5,14 @@ import java.util.Arrays;
 public class SecretMap {
 
     public String[] solution(int n, int[] arr1, int[] arr2) {
-        String[] answer = {};
+        String[] answer = new String[n];
 
-        String[] sArr1 = new String[n];
-        String[] sArr2 = new String[n];
+        for (int i = 0; i < n; i++) {
+            answer[i] = Integer.toBinaryString(arr1[i] | arr2[i]).replace("1", "#").replace("0", " ");
 
-        for (int i = 0; i < n; i++) { // 10진수 -> 2진수 변환 & 자릿수 맞추기
-            sArr1[i] = String.format("%05d", Integer.parseInt(Integer.toBinaryString(arr1[i])));
-            sArr2[i] = String.format("%05d", Integer.parseInt(Integer.toBinaryString(arr2[i])));
+            // 자릿수 맞춰주는 연산
+            answer[i] = " ".repeat(n - answer[i].length()) + answer[i];
         }
-
-        System.out.println(Arrays.toString(sArr1));
-        System.out.println(Arrays.toString(sArr2));
 
         return answer;
     }
