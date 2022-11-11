@@ -6,12 +6,12 @@ public class SecretMap {
 
     public String[] solution(int n, int[] arr1, int[] arr2) {
         String[] answer = {};
+
         String[][] arr = new String[n][n]; // 2차원 배열 생성
         String[] str1 = new String[n];
         String[] str2 = new String[n];
 
-
-        for (int i = 0; i < n; i++) { // 10진수 -> 2진수 변환
+        for (int i = 0; i < n; i++) { // 10진수 -> 2진수 변환 & 자릿수 맞추기
             str1[i] = String.format("%05d", Integer.parseInt(Integer.toBinaryString(arr1[i])));
             str2[i] = String.format("%05d", Integer.parseInt(Integer.toBinaryString(arr2[i])));
         }
