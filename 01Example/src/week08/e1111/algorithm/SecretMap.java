@@ -4,9 +4,14 @@ import java.util.Arrays;
 
 public class SecretMap {
 
-    public String[] solution(int n, int[] arr1, int[] arr2) {
+    public int[] solution(int n, int[] arr1, int[] arr2) {
         String[] answer = {};
-        return answer;
+
+        for (int i = 0; i < arr1.length; i++) {
+            arr1[i] = Integer.parseInt(Integer.toBinaryString(arr1[i]));
+        }
+
+        return arr1;
     }
 
     public static void main(String[] args) {
@@ -15,7 +20,7 @@ public class SecretMap {
         int[] arr2 = {30, 1, 21, 17, 28};
 
         SecretMap secretMap = new SecretMap();
-        String[] solution = secretMap.solution(n, arr1, arr2);
+        int[] solution = secretMap.solution(n, arr1, arr2);
         System.out.println(Arrays.toString(solution)); // ["#####","# # #", "### #", "# ##", "#####"]
     }
 }
