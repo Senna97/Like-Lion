@@ -9,10 +9,11 @@ public class SieveOfEratosthenes {
 
         for (int i = 0; i < nums.length; i++) {
             nums[i] = i + 2;
+        }
 
-            if (nums[i] % 2 == 0 && nums[i] != 2) {
-                nums[i] = 0;
-            }
+        int idx = 0;
+        for (int i = nums[idx]; i < nums.length; i += 2) {
+            nums[i] = 0;
         }
 
         System.out.println(Arrays.toString(nums));
