@@ -16,6 +16,11 @@ public class SieveOfEratosthenes {
             nums[i] = 0;
         }
 
+        idx = 1;
+        for (int i = nums[idx] + 1; i < nums.length; i += 3) {
+            nums[i] = 0;
+        }
+
         System.out.println(Arrays.toString(nums));
     }
 }
