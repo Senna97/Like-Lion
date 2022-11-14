@@ -6,6 +6,7 @@ public class SieveOfEratosthenes {
     public static void main(String[] args) {
         int n = 50;
         int[] nums = new int[n - 1];
+
         for (int i = 0; i < nums.length; i++) {
             nums[i] = i + 2;
 
