@@ -8,6 +8,10 @@ public class SieveOfEratosthenes {
         int[] nums = new int[n - 1];
         for (int i = 0; i < nums.length; i++) {
             nums[i] = i + 2;
+
+            if (nums[i] % 2 == 0 && nums[i] != 2) {
+                nums[i] = 0;
+            }
         }
 
         System.out.println(Arrays.toString(nums));
