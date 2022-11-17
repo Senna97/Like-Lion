@@ -1,6 +1,9 @@
 package week09.e1117.algorithm;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class QuickSort {
 
@@ -10,9 +13,11 @@ public class QuickSort {
 
     public void quickSort(int[] arr, int startIdx, int endIdx) {
         int bigger = partition(arr, startIdx, endIdx);
+
         if (startIdx < bigger - 1) {
             quickSort(arr, startIdx, bigger - 1);
         }
+
         if (bigger < endIdx) {
             quickSort(arr, bigger, endIdx);
         }
@@ -47,17 +52,23 @@ public class QuickSort {
 
     public void printArr(int[] arr) {
         for (int i : arr) {
-            System.out.printf("%s ", i);
+            if (i != 0) {
+                System.out.printf("%s ", i);
+            }
         }
     }
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int[] arr = new int[N];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = sc.nextInt();
+        StringTokenizer st = null;
+
+        int N = Integer.parseInt(br.readLine());
+
+        int[] arr = new int[N + 1];
+        st = new StringTokenizer(br.readLine());
+        for (int i = 1; i <= N; i++) {
+            arr[i] = Integer.parseInt(st.nextToken());
         }
 
         QuickSort quickSort = new QuickSort();
