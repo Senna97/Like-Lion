@@ -1,31 +1,42 @@
 package week09.e1117.algorithm;
 
-import java.util.Arrays;
+import java.util.Scanner;
 
 public class QuickSort {
 
-    public int[] sort(int[] arr) {
-        int pivot = arr[arr.length / 2];
-        int leftIdx = 0;
-        int rightIdx = arr.length - 1;
+    public void quickSort(int[] arr) {
+        quickSort(arr, 0, arr.length - 1);
+    }
 
-        while (leftIdx < rightIdx) {
-            if (arr[leftIdx] < pivot) {
-                leftIdx += 1;
+    public void quickSort(int[] arr, int startIdx, int endIdx) {
+        int bigger = partition(arr, startIdx, endIdx);
+        if (startIdx < bigger - 1) {
+            quickSort(arr, startIdx, bigger - 1);
+        }
+        if (bigger < endIdx) {
+            quickSort(arr, bigger, endIdx);
+        }
+    }
+
+    public int partition(int[] arr, int startIdx, int endIdx) {
+        int pivot = arr[(startIdx + endIdx) / 2];
+
+        while (startIdx <= endIdx) {
+            while (arr[startIdx] < pivot) {
+                startIdx += 1;
             }
 
-            if (arr[rightIdx] > pivot) {
-                rightIdx -= 1;
+            while (arr[endIdx] > pivot) {
+                endIdx -= 1;
             }
 
-            if (arr[leftIdx] > arr[rightIdx]) {
-                swap(leftIdx, rightIdx, arr);
-                leftIdx += 1;
-                rightIdx -= 1;
+            if (startIdx <= endIdx) {
+                swap(startIdx, endIdx, arr);
+                startIdx += 1;
+                endIdx -= 1;
             }
         }
-
-        return arr;
+        return startIdx;
     }
 
     public void swap(int a, int b, int[] arr) {
@@ -34,11 +45,23 @@ public class QuickSort {
         arr[b] = temp;
     }
 
-    public static void main(String[] args) {
-        QuickSort quickSort = new QuickSort();
+    public void printArr(int[] arr) {
+        for (int i : arr) {
+            System.out.printf("%s ", i);
+        }
+    }
 
-        int[] arr = {20, 18, 5, 19, 40, 50, 5, 25};
-        int[] sortArr = quickSort.sort(arr);
-        System.out.println(Arrays.toString(sortArr));
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+
+        int[] arr = new int[N];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        QuickSort quickSort = new QuickSort();
+        quickSort.quickSort(arr);
+        quickSort.printArr(arr);
     }
 }
