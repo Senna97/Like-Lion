@@ -6,12 +6,12 @@ public class TemplarWeapon {
     public int solution(int number, int limit, int power) {
         int[] intArr = new int[number];
 
-        for (int i = 0; i < number; i++) {
-            intArr[i] = i + 1;
-        }
-
         int count = 0;
+        int sum = 0;
+
         for (int i = 0; i < intArr.length; i++) {
+            intArr[i] = i + 1;
+
             for (int j = 1; j <= intArr.length; j++) {
                 if (intArr[i] % j == 0) {
                     count += 1;
@@ -19,17 +19,12 @@ public class TemplarWeapon {
             }
             intArr[i] = count;
             count = 0;
-        }
 
-        for (int i = 0; i < intArr.length; i++) {
             if (intArr[i] > limit) {
                 intArr[i] = power;
             }
-        }
 
-        int sum = 0;
-        for (int i : intArr) {
-            sum += i;
+            sum += intArr[i];
         }
 
         return sum;
