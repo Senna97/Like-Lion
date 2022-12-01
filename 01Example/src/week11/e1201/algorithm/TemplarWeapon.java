@@ -3,30 +3,28 @@ package week11.e1201.algorithm;
 
 public class TemplarWeapon {
 
-    public int solution(int number, int limit, int power) {
-        int[] intArr = new int[number];
-
+    public int findDivisors(int number, int limit, int power) {
         int count = 0;
-        int sum = 0;
-
-        for (int i = 0; i < intArr.length; i++) {
-            intArr[i] = i + 1;
-
-            for (int j = 1; j <= intArr.length; j++) {
-                if (intArr[i] % j == 0) {
-                    count += 1;
-                }
+        for (int i = 1; i * i <= number; i++) {
+            if (i * i == number) {
+                count += 1;
+            } else if (number % i == 0) {
+                count += 2;
             }
-            intArr[i] = count;
-            count = 0;
-
-            if (intArr[i] > limit) {
-                intArr[i] = power;
-            }
-
-            sum += intArr[i];
         }
 
+        if (count > limit) {
+            return power;
+        }
+
+        return count;
+    }
+
+    public int solution(int number, int limit, int power) {
+        int sum = 0;
+        for (int i = 1; i <= number; i++) {
+            sum += findDivisors(i, limit, power);
+        }
         return sum;
     }
 
