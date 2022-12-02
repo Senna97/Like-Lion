@@ -7,11 +7,13 @@ import java.io.InputStreamReader;
 public class CodeUp4037 {
 
     public void factorization(int num) {
-        for (int i = 2; i <= num; i++) {
+        int i = 2;
+        while (i <= num) {
             if (num % i == 0) {
                 System.out.printf("%d ", i);
-                factorization(num / i);
-                break;
+                num /= i;
+            } else {
+                i++;
             }
         }
     }
