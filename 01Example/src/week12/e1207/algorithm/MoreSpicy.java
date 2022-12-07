@@ -1,13 +1,11 @@
 package week12.e1207.algorithm;
 
-import java.util.Arrays;
 import java.util.PriorityQueue;
 
 public class MoreSpicy {
 
     public int solution(int[] scoville, int K) {
 
-        Arrays.sort(scoville);
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
 
         for (int i = 0; i < scoville.length; i++) {
@@ -16,12 +14,12 @@ public class MoreSpicy {
 
         int answer = 0;
         while (priorityQueue.peek() < K) {
-            int first = priorityQueue.peek();
-            priorityQueue.poll();
-            int second = priorityQueue.peek();
-            priorityQueue.poll();
-            priorityQueue.add(first + second * 2);
             answer++;
+            if (priorityQueue.size() >= 2) {
+                priorityQueue.add(priorityQueue.poll() + priorityQueue.poll() * 2);
+            } else {
+                return -1;
+            }
         }
 
         return answer;
